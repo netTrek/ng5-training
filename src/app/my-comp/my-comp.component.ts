@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyCompComponent implements OnInit {
 
+  counter = 0;
+
+
   constructor() { }
+
+  increment() {
+    this.counter ++;
+  }
 
   ngOnInit() {
   }
