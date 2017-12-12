@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MyCompComponent } from './my-comp/my-comp.component';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MyCompComponent } from './my-comp/my-comp.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
