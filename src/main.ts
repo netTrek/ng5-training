@@ -15,6 +15,5 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .then ( () => {
     // registerLocaleData( localeDe );
     // or ng serve --locale=de
-    console.log ( 'sa' );
   } )
   .catch(err => console.log(err));
