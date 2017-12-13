@@ -33,6 +33,10 @@ export class AppComponent {
     }
   }
 
+  onClick( event: MouseEvent ) {
+    console.log ( 'clicke', event );
+  }
+
 
   getFeedback( msg?: string): string {
     if ( !! msg ) {

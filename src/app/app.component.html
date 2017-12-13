@@ -1,29 +1,38 @@
 <!--The content below is only a placeholder and can be replaced.-->
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<h1>
+  Welcome to {{ title }}!
+</h1>
 
-<p [innerHTML]="lorem" [style.color]="fontColor"
-[style.width.%]="size"
+<p [innerHTML]="lorem"
+   [style.color]="fontColor"
+   [style.width.%]="size"
    class="sab"
    [class.left]="align==='left'"
    [class.center]="align==='center'"
    [class.right]="align==='right'"
 ></p>
 
-<i class="fa fa-align-left" (click)="align='left'"></i>
-<i class="fa fa-align-center" (click)="align='center'"></i>
-<i class="fa fa-align-right" (click)="align='right'"></i>
+<button (click)="onClick($event)">click mich</button>
+
+<i class="fa fa-align-left"
+   (click)="align='left'"></i>
+<i class="fa fa-align-center"
+   (click)="align='center'"></i>
+<i class="fa fa-align-right"
+   (click)="align='right'"></i>
 
 <hr>
-<img [src]="women[womanInd]" alt="frau" width="25%" (click)="changeWoman()">
+<img [src]="women[womanInd]"
+     alt="frau"
+     width="25%"
+     (click)="changeWoman()">
 
-<img [attr.src]="women[womanInd]" alt="frau" width="25%">
-  <bm-my-comp></bm-my-comp>
+<img [attr.src]="women[womanInd]"
+     alt="frau"
+     width="25%">
 
-  <bm-user-list></bm-user-list>
-
-
+<bm-my-comp></bm-my-comp>
+<bm-user-list></bm-user-list>
 
 
 <router-outlet></router-outlet>
