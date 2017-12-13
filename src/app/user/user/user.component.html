@@ -1,4 +1,14 @@
+<span *ngIf="isSelected; else elseBlock">*</span>
+<ng-template #elseBlock>
+  <span>-</span>
+</ng-template>
 {{name}}
+
 <!--
-<span (click)="clickMe()">{{name}}</span>
+Beispiel aus der echten Welt ;)
+<button *ngIf="isLoggedId; else logged">login</button>
+<ng-template #logged>
+  <button>logout</button>
+</ng-template>
 -->
+
