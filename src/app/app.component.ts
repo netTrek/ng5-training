@@ -23,6 +23,8 @@ export class AppComponent {
 
   size = 75;
 
+  align = 'left';
+
   changeWoman() {
     if ( this.womanInd > 0 ) {
       this.womanInd = 0;

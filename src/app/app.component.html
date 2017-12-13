@@ -5,8 +5,17 @@
 
 <p [innerHTML]="lorem" [style.color]="fontColor"
 [style.width.%]="size"
+   class="sab"
+   [class.left]="align==='left'"
+   [class.center]="align==='center'"
+   [class.right]="align==='right'"
 ></p>
 
+<i class="fa fa-align-left" (click)="align='left'"></i>
+<i class="fa fa-align-center" (click)="align='center'"></i>
+<i class="fa fa-align-right" (click)="align='right'"></i>
+
+<hr>
 <img [src]="women[womanInd]" alt="frau" width="25%" (click)="changeWoman()">
 
 <img [attr.src]="women[womanInd]" alt="frau" width="25%">
