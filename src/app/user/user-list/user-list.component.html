@@ -7,9 +7,9 @@
       </bm-user-group>
       <h1>User List</h1>
     </header>
-    <bm-user *ngFor="let usr of userList; index as i; even as e"
+    <bm-user *ngFor="let usr of userList; index as i; even as e; odd as o"
              [user]="usr"
-             [class.even]="e"
+             [ngClass]="{even: e, odd: o}"
              [selectedUsr]="selectedUsr"
              (selected)="setSelectedUsr( $event )"
     ></bm-user>
