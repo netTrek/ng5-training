@@ -3,16 +3,16 @@
     Welcome to {{ title }}!
   </h1>
 
-  <ul>
-    <li>{{ getFeedback( ) }}</li>
-    <li>{{ getFeedback( 'hello' ) }}</li>
-    <li>{{ getFeedback( msg ) }}</li>
-    <li>{{ title  + ' ___ENDE' }}</li>
-  </ul>
+<p [innerHTML]="lorem"></p>
 
+<img [src]="women[womanInd]" alt="frau" width="25%" (click)="changeWoman()">
+
+<img [attr.src]="women[womanInd]" alt="frau" width="25%">
   <bm-my-comp></bm-my-comp>
 
   <bm-user-list></bm-user-list>
+
+
 
 
 <router-outlet></router-outlet>
