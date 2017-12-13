@@ -4,6 +4,10 @@
   margin: 0;
   padding: 5px;
 
+  &.even {
+    background-color: #93d76c;
+  }
+
   &.selected {
     background-color: yellow;
   }

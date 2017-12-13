@@ -15,10 +15,10 @@ export class AppComponent {
   private intervalId: number;
 
   constructor () {
-    for ( let i = 0; i < 10; i++ ) {
-      this.list.push( 'random user' + Math.floor( Math.random() * 1000 ) );
-    }
-    this.autoDel ();
+    // for ( let i = 0; i < 10; i++ ) {
+    //   this.list.push( 'random user' + Math.floor( Math.random() * 1000 ) );
+    // }
+    // this.autoDel ();
   }
 
   private autoDel () {

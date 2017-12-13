@@ -7,10 +7,11 @@
       </bm-user-group>
       <h1>User List</h1>
     </header>
-    <bm-user *ngFor="let usr of userList"
-      [name]="usr"
-      [selectedUsrName]="selectedUsr"
-      (selected)="setSelectedUsr( $event )"
+    <bm-user *ngFor="let usr of userList; index as i; even as e"
+             [name]="usr + ' ' + i + ' ' + e"
+             [class.even]="e"
+             [selectedUsrName]="selectedUsr"
+             (selected)="setSelectedUsr( $event )"
     ></bm-user>
   </article>
 </section>
