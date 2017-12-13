@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component ( {
   selector   : 'bm-user',
@@ -32,8 +32,9 @@ export class UserComponent implements OnInit {
   constructor () {
   }
 
-  clickMe () {
-    console.log ( `hello world ${this.name}` );
+  @HostListener( 'click', [ '$event', 'name'] )
+  clickMe ( evt: MouseEvent, name: string ) {
+    console.log ( evt, name );
     this.selected.next( this.name );
   }
 
