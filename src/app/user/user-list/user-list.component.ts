@@ -14,6 +14,9 @@ export class UserListComponent implements OnInit, AfterViewInit, OnChanges {
 
   private _bool: boolean;
 
+  @Input()
+  userList: string[] = [];
+
   selectedUsr: string;
 
   get bool (): boolean {

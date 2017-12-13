@@ -7,23 +7,8 @@
       </bm-user-group>
       <h1>User List</h1>
     </header>
-    <bm-user
-      name="user 1"
-      [selectedUsrName]="selectedUsr"
-      (selected)="setSelectedUsr( $event )"
-    ></bm-user>
-    <bm-user
-      name="user 2"
-      [selectedUsrName]="selectedUsr"
-      (selected)="setSelectedUsr( $event )"
-    ></bm-user>
-    <bm-user
-      name="user 3"
-      [selectedUsrName]="selectedUsr"
-      (selected)="setSelectedUsr( $event )"
-    ></bm-user>
-    <bm-user
-      name="user 4"
+    <bm-user *ngFor="let usr of userList"
+      [name]="usr"
       [selectedUsrName]="selectedUsr"
       (selected)="setSelectedUsr( $event )"
     ></bm-user>
