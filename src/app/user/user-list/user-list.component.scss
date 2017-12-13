@@ -1,15 +1,14 @@
 header {
 
   background-color: aliceblue;
+  border-bottom-style: solid;
+  border-bottom-color: red;
   h1 {
     display: inline-block;
-    width: calc(100% - 30px);
     margin: 0;
     margin-top: 5px;
     padiding-bottom: 5px;
     padding-left: 5px;
-    border-bottom-style: solid;
-    border-bottom-color: red;
   }
 
 

@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, ContentChildren, OnInit, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { UserComponent } from '../user/user.component';
 
 @Component({
@@ -6,20 +6,24 @@ import { UserComponent } from '../user/user.component';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit, AfterContentInit {
+export class UserListComponent implements OnInit, AfterViewInit {
 
-  @ContentChild (UserComponent)
+  @ViewChild (UserComponent)
   user: UserComponent;
 
-  @ContentChildren (UserComponent)
+  @ViewChildren (UserComponent)
   users: QueryList<UserComponent>;
+
+  @ViewChild ('listheader')
+  listheader: ElementRef;
 
   constructor( ) { }
 
   ngOnInit() {
   }
 
-  ngAfterContentInit (): void {
-    console.log( this.user, this.users.toArray()  );
+  ngAfterViewInit (): void {
+    console.log( this.user, this.users.toArray(), this.listheader  );
+    // this.listheader.nativeElement.style.backgroundColor = 'red';
   }
 }

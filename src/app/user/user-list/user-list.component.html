@@ -1,10 +1,13 @@
 <section>
   <article>
-    <header>
-      <ng-content select="bm-user-group"></ng-content>
+    <header #listheader>
+      <bm-user-group><i class="fa fa-users"></i></bm-user-group>
       <h1>User List</h1>
     </header>
-    <ng-content></ng-content>
+    <bm-user></bm-user>
+    <bm-user></bm-user>
+    <bm-user></bm-user>
+    <bm-user></bm-user>
   </article>
 </section>
 
