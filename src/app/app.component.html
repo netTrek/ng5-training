@@ -3,7 +3,9 @@
     Welcome to {{ title }}!
   </h1>
 
-<p [innerHTML]="lorem"></p>
+<p [innerHTML]="lorem" [style.color]="fontColor"
+[style.width.%]="size"
+></p>
 
 <img [src]="women[womanInd]" alt="frau" width="25%" (click)="changeWoman()">
 

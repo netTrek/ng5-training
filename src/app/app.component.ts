@@ -19,6 +19,10 @@ export class AppComponent {
 
   lorem = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur <strong>deleniti ex illum ipsa</strong> modi optio quibusdam quisquam repudiandae voluptate. Adipisci dolores eaque esse fugiat incidunt optio quas, <script>alert('hallo')</script>quos temporibus.`;
 
+  fontColor = 'green';
+
+  size = 75;
+
   changeWoman() {
     if ( this.womanInd > 0 ) {
       this.womanInd = 0;
