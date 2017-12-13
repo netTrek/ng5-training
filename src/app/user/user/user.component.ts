@@ -2,6 +2,7 @@ import {
   Component, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges,
   ViewEncapsulation
 } from '@angular/core';
+import { User } from '../user';
 
 @Component ( {
   selector     : 'bm-user',
@@ -27,13 +28,13 @@ import {
 export class UserComponent implements OnInit, OnChanges {
 
   @Input ()
-  name = 'unknown';
+  user: User;
 
   @Input ()
-  selectedUsrName: string;
+  selectedUsr: User;
 
   @Output ()
-  selected: EventEmitter<string> = new EventEmitter ();
+  selected: EventEmitter<User> = new EventEmitter ();
 
   @HostBinding ( 'class.selected' )
   isSelected = false;
@@ -45,16 +46,15 @@ export class UserComponent implements OnInit, OnChanges {
   }
 
   @HostListener ( 'click', [ '$event',
-                             'name'
+                             'user'
   ] )
-  clickMe ( evt: MouseEvent, name: string ) {
-    console.log ( evt, name );
-    this.selected.next ( this.name );
+  clickMe ( evt: MouseEvent ) {
+    this.selected.next ( this.user );
   }
 
   ngOnChanges ( changes: SimpleChanges ): void {
-    if ( !! changes.selectedUsrName ) {
-      this.isSelected = this.selectedUsrName === this.name;
+    if ( !! changes.selectedUsr ) {
+      this.isSelected = this.selectedUsr === this.user;
       this.color = this.isSelected ? 'blue' : null;
       // if ( this.isSelected ) {
       //   this.color = 'blue';

@@ -3,6 +3,7 @@ import {
   ViewChildren
 } from '@angular/core';
 import { UserComponent } from '../user/user.component';
+import { User } from '../user';
 
 @Component({
   selector: 'bm-user-list',
@@ -15,9 +16,9 @@ export class UserListComponent implements OnInit, AfterViewInit, OnChanges {
   private _bool: boolean;
 
   @Input()
-  userList: string[] = [];
+  userList: User[] = [];
 
-  selectedUsr: string;
+  selectedUsr: User;
 
   get bool (): boolean {
     return this._bool;
@@ -45,7 +46,7 @@ export class UserListComponent implements OnInit, AfterViewInit, OnChanges {
 
   constructor( ) { }
 
-  setSelectedUsr ( selectedUsr: string ) {
+  setSelectedUsr ( selectedUsr: User ) {
     this.selectedUsr = selectedUsr;
   }
 

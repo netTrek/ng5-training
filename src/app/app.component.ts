@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import userList from './user/user.model';
+import { User } from './user/user';
 
 @Component ( {
   selector   : 'bm-root',
@@ -8,25 +10,27 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title          = 'bm';
-  list: string[] = [ 'saban',
-                     'peter',
-                     'franz'
-  ];
+  list: User[] = [];
   private intervalId: number;
 
   constructor () {
+
+    this.list = [ ...userList ];
+
     // for ( let i = 0; i < 10; i++ ) {
     //   this.list.push( 'random user' + Math.floor( Math.random() * 1000 ) );
     // }
     // this.autoDel ();
+
+    // console.log ( userList );
   }
 
   private autoDel () {
-    this.intervalId = window.setInterval( () => {
+    this.intervalId = window.setInterval ( () => {
       if ( this.list.length > 0 ) {
-        this.list.pop();
+        this.list.pop ();
       } else {
-        window.clearInterval( this.intervalId );
+        window.clearInterval ( this.intervalId );
       }
     }, 500 );
   }
