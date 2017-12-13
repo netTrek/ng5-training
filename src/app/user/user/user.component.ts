@@ -1,15 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-@Component({
-  selector: 'bm-user',
+@Component ( {
+  selector   : 'bm-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
-})
+  // template : `
+  //   <hr>
+  //   hello <br>
+  //   <strong (click)="clickMe()">world</strong>
+  //   <hr>
+  // `,
+  styleUrls  : [ './user.component.scss' ],
+  // styles: [ `
+  //
+  //
+  //
+  //             strong {
+  //               color: #000000;
+  //             }
+  //
+  //           ` ]
+  encapsulation: ViewEncapsulation.Emulated // Native
+} )
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  private name = 'saban';
 
-  ngOnInit() {
+  constructor () {
+  }
+
+  clickMe () {
+    console.log ( `hello world ${this.name}` );
+  }
+
+  ngOnInit () {
   }
 
 }
