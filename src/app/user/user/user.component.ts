@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component ( {
   selector   : 'bm-user',
@@ -23,13 +23,18 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 } )
 export class UserComponent implements OnInit {
 
-  private name = 'saban';
+  @Input()
+  name = 'unknown';
+
+  @Output()
+  selected: EventEmitter<string> = new EventEmitter();
 
   constructor () {
   }
 
   clickMe () {
     console.log ( `hello world ${this.name}` );
+    this.selected.next( this.name );
   }
 
   ngOnInit () {

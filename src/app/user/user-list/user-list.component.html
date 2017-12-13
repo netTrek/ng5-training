@@ -1,13 +1,32 @@
 <section>
   <article>
     <header #listheader>
-      <bm-user-group><i class="fa fa-users"></i></bm-user-group>
+      <bm-user-group>
+        <i class="fa"
+           [ngClass]="icon"></i>
+      </bm-user-group>
       <h1>User List</h1>
     </header>
-    <bm-user></bm-user>
-    <bm-user></bm-user>
-    <bm-user></bm-user>
-    <bm-user></bm-user>
+    <bm-user
+      name="user 1"
+      [class.selected]="selectedUsr==='user 1'"
+      (selected)="setSelectedUsr( $event )"
+    ></bm-user>
+    <bm-user
+      name="user 2"
+      [class.selected]="selectedUsr==='user 2'"
+      (selected)="setSelectedUsr( $event )"
+    ></bm-user>
+    <bm-user
+      name="user 3"
+      [class.selected]="selectedUsr==='user 3'"
+      (selected)="setSelectedUsr( $event )"
+    ></bm-user>
+    <bm-user
+      name="user 4"
+      [class.selected]="selectedUsr==='user 4'"
+      (selected)="setSelectedUsr( $event )"
+    ></bm-user>
   </article>
 </section>
 
