@@ -3,8 +3,16 @@
     Welcome to {{ title }}!
   </h1>
 
+  <ul>
+    <li>{{ getFeedback( ) }}</li>
+    <li>{{ getFeedback( 'hello' ) }}</li>
+    <li>{{ getFeedback( msg ) }}</li>
+    <li>{{ title  + ' ___ENDE' }}</li>
+  </ul>
+
   <bm-my-comp></bm-my-comp>
 
   <bm-user-list></bm-user-list>
+
 
 <router-outlet></router-outlet>
