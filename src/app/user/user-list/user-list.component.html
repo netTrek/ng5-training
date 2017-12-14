@@ -1,12 +1,15 @@
 <section>
   <article>
-    <header #listheader>
+    <header #listheader bmDoHover="yellow" style="color: dimgray">
       <bm-user-group>
         <i class="fa"
            [ngClass]="icon"></i>
       </bm-user-group>
       <h1>User List</h1>
     </header>
+    <aside bmDoHover>
+      test
+    </aside>
     <bm-user *ngFor="let usr of userList; index as i; even as e; odd as o"
              [user]="usr"
              [ngClass]="{even: e, odd: o}"
