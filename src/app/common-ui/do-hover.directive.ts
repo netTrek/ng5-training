@@ -15,7 +15,6 @@ export class DoHoverDirective implements OnChanges{
 
   constructor ( private elem: ElementRef ) {
 
-    // console.log ( elem );
     const startColor = this.elem.nativeElement.style.color;
     if ( !!startColor ) {
       this.startColor = startColor;
@@ -24,7 +23,6 @@ export class DoHoverDirective implements OnChanges{
   }
 
   ngOnChanges ( changes: SimpleChanges ): void {
-    console.log ( changes );
     if ( !!changes.bmDoHover ) {
       if ( this.bmDoHover === '') {
         this.bmDoHover = 'red';

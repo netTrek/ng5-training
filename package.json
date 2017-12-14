@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:de": "ng serve --locale=de",
     "start:aot": "ng serve --prod --aot",
     "bundle-report": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats.json -h 0.0.0.0",
     "build": "ng build",

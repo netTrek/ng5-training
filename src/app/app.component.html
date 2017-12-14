@@ -3,6 +3,19 @@
   Welcome to {{ title }}!
 </h1>
 
+
+<ul>
+  <li>{{1234.4123 | number}}</li>
+  <li>{{1234.4123 | number : '3.2-5'}}</li>
+  <li>{{1234.4 | number : '3.2-5'}}</li>
+  <li>{{1234.87687687687687 | number : '3.2-5'}}</li>
+  <li>{{4.4 | number : '3.2-5'}}</li>
+  <li>{{1234.4123 | currency : 'EUR' : 'symbol' }}</li>
+  <li>{{ 1513244959989 | date }}</li>
+  <li>{{ 1513244959989 | date : 'long' }}</li>
+</ul>
+
+
 <bm-my-comp></bm-my-comp>
 <bm-user-list
   icon="fa-users"
