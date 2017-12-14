@@ -7,9 +7,9 @@
       </bm-user-group>
       <h1>User List</h1>
     </header>
-    <aside bmDoHover>
+    <aside bmDoHover (click)="sendTestErr()">
       {{'test' | reverse}} <br>
-      {{'test' | reverse: 'hi' }}
+      {{'test' | reverse: 'hi' }} <br>
     </aside>
     <bm-user *ngFor="let usr of userList | reverse ; index as i; even as e; odd as o"
              [user]="usr"

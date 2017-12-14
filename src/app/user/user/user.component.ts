@@ -3,6 +3,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { User } from '../user';
+import { ErrorMsgService } from '../../common-ui/error-msg.service';
 
 @Component ( {
   selector     : 'bm-user',
@@ -42,7 +43,7 @@ export class UserComponent implements OnInit, OnChanges {
   @HostBinding ( 'style.color' )
   color: string | null = null;
 
-  constructor () {
+  constructor ( public  $errMsg: ErrorMsgService ) {
   }
 
   @HostListener ( 'click', [ '$event',

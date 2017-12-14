@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { UserComponent } from '../user/user.component';
 import { User } from '../user';
+import { ErrorMsgService } from '../../common-ui/error-msg.service';
 
 @Component({
   selector: 'bm-user-list',
@@ -44,7 +45,12 @@ export class UserListComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild ('listheader')
   listheader: ElementRef;
 
-  constructor( ) { }
+  constructor( public $errMsg: ErrorMsgService ) {
+  }
+
+  sendTestErr() {
+    this.$errMsg.errorBotschaft$.next( 'hoppla ');
+  }
 
   setSelectedUsr ( selectedUsr: User ) {
     this.selectedUsr = selectedUsr;

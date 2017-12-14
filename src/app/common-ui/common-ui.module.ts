@@ -2,12 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoHoverDirective } from './do-hover.directive';
 import { ReversePipe } from './reverse.pipe';
+import { ErrorMsgService } from './error-msg.service';
+import { ErrorViewComponent } from './error-view/error-view.component';
 
-@NgModule({
-  imports: [
+@NgModule ( {
+  imports     : [
     CommonModule
   ],
-  declarations: [DoHoverDirective, ReversePipe],
-  exports: [DoHoverDirective, ReversePipe]
-})
-export class CommonUiModule { }
+  providers   : [ ErrorMsgService ],
+  declarations: [ DoHoverDirective,
+                  ReversePipe,
+                  ErrorViewComponent
+  ],
+  exports     : [ DoHoverDirective,
+                  ReversePipe,
+                  ErrorViewComponent
+  ]
+} )
+export class CommonUiModule {
+}

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyCompComponent } from './my-comp/my-comp.component';
 import { UserModule } from './user/user.module';
+import { CommonUiModule } from './common-ui/common-ui.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule
+    UserModule,
+    CommonUiModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'de' }

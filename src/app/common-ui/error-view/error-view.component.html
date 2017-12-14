@@ -1,0 +1,3 @@
+<ng-template [ngIf]="$err.errorBotschaft$ | async">
+  <strong (click)="reset()">{{$err.errorBotschaft$ | async}}</strong>
+</ng-template>
