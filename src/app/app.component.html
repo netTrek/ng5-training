@@ -6,23 +6,11 @@
   Welcome to {{ title }}!
 </h1>
 
+<nav>
+  <a routerLink="home" routerLinkActive="active">home</a> |
+  <a routerLink="users" routerLinkActive="active">users</a> |
+  <a routerLink="contact" routerLinkActive="active">contact</a>
+</nav>
 
-<ul>
-  <li>{{1234.4123 | number}}</li>
-  <li>{{1234.4123 | number : '3.2-5'}}</li>
-  <li>{{1234.4 | number : '3.2-5'}}</li>
-  <li>{{1234.87687687687687 | number : '3.2-5'}}</li>
-  <li>{{4.4 | number : '3.2-5'}}</li>
-  <li>{{1234.4123 | currency : 'EUR' : 'symbol' }}</li>
-  <li>{{ 1513244959989 | date }}</li>
-  <li>{{ 1513244959989 | date : 'long' }}</li>
-</ul>
-
-
-<bm-my-comp></bm-my-comp>
-<bm-user-list
-  icon="fa-users"
-  [userList]="$user.userList"
-></bm-user-list>
 
 <router-outlet></router-outlet>

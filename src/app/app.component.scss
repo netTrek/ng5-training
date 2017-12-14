@@ -3,14 +3,8 @@
   background-color: yellow;
 }
 
-p {
-  &.left {
-    text-align: left;
-  }
-  &.right {
-    text-align: right;
-  }
-  &.center {
-    text-align: center;
-  }
+.active {
+  font-size: larger;
+  font-weight: bolder;
+  cursor: none;
 }

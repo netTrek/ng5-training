@@ -8,12 +8,16 @@ import { MyCompComponent } from './my-comp/my-comp.component';
 import { UserModule } from './user/user.module';
 import { CommonUiModule } from './common-ui/common-ui.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeViewComponent } from './home-view/home-view.component';
+import { ContactViewComponent } from './contact-view/contact-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyCompComponent
+    MyCompComponent,
+    HomeViewComponent,
+    ContactViewComponent
   ],
   imports: [
     BrowserModule,
