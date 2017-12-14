@@ -8,9 +8,10 @@
       <h1>User List</h1>
     </header>
     <aside bmDoHover>
-      test
+      {{'test' | reverse}} <br>
+      {{'test' | reverse: 'hi' }}
     </aside>
-    <bm-user *ngFor="let usr of userList; index as i; even as e; odd as o"
+    <bm-user *ngFor="let usr of userList | reverse ; index as i; even as e; odd as o"
              [user]="usr"
              [ngClass]="{even: e, odd: o}"
              [selectedUsr]="selectedUsr"
