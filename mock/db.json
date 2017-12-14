@@ -5,6 +5,12 @@
       "firstname": "Saban",
       "lastname": "Ünlü",
       "age": 44
+    },
+    {
+      "id": 2,
+      "firstname": "Peter",
+      "lastname": "Müller",
+      "age": 33
     }
   ]
 }

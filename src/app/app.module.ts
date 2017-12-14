@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MyCompComponent } from './my-comp/my-comp.component';
 import { UserModule } from './user/user.module';
 import { CommonUiModule } from './common-ui/common-ui.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CommonUiModule } from './common-ui/common-ui.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     UserModule,
     CommonUiModule

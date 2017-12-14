@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import userList from './user/user.model';
 import { User } from './user/user';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,6 +9,7 @@ import 'rxjs/add/operator/filter';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { UserService } from './user/user.service';
 
 @Component ( {
   selector   : 'bm-root',
@@ -19,10 +19,10 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class AppComponent {
 
   title        = 'bm';
-  list: User[] = [];
+  // list: User[] = [];
   private intervalId: number;
 
-  constructor () {
+  constructor ( public $user: UserService ) {
 
     const subj: BehaviorSubject<number> = new BehaviorSubject( 0 );
 
@@ -83,16 +83,16 @@ export class AppComponent {
     //   }
     // );
 
-    this.list = [ ...userList ];
+    // this.list = [ ...userList ];
   }
 
-  private autoDel () {
-    this.intervalId = window.setInterval ( () => {
-      if ( this.list.length > 0 ) {
-        this.list.pop ();
-      } else {
-        window.clearInterval ( this.intervalId );
-      }
-    }, 500 );
-  }
+  // private autoDel () {
+  //   this.intervalId = window.setInterval ( () => {
+  //     if ( this.list.length > 0 ) {
+  //       this.list.pop ();
+  //     } else {
+  //       window.clearInterval ( this.intervalId );
+  //     }
+  //   }, 500 );
+  // }
 }
