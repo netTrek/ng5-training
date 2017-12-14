@@ -11,12 +11,14 @@
       {{'test' | reverse}} <br>
       {{'test' | reverse: 'hi' }} <br>
     </aside>
-    <bm-user *ngFor="let usr of userList | reverse ; index as i; even as e; odd as o"
+    <bm-user *ngFor="let usr of userList; index as i; even as e; odd as o"
              [user]="usr"
              [ngClass]="{even: e, odd: o}"
              [selectedUsr]="selectedUsr"
              (selected)="setSelectedUsr( $event )"
+             (delete)="$user.delUser ( $event ).subscribe()"
     ></bm-user>
   </article>
+  <button (click)="addRandomUsr()">add</button>
 </section>
 

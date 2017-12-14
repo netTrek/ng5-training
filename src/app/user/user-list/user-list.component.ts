@@ -5,6 +5,7 @@ import {
 import { UserComponent } from '../user/user.component';
 import { User } from '../user';
 import { ErrorMsgService } from '../../common-ui/error-msg.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'bm-user-list',
@@ -45,11 +46,28 @@ export class UserListComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild ('listheader')
   listheader: ElementRef;
 
-  constructor( public $errMsg: ErrorMsgService ) {
+  constructor( public $errMsg: ErrorMsgService, private $user: UserService ) {
+/*
+
+    $user.getUsrById( 3 ).subscribe(
+      next => console.log( next ),
+      error => $errMsg.errorBotschaft$.next( error.message )
+    );
+*/
+
+
   }
 
   sendTestErr() {
     this.$errMsg.errorBotschaft$.next( 'hoppla ');
+  }
+
+  addRandomUsr () {
+    this.$user.create( <User>{
+      firstname: 'has peter',
+      lastname: 'bond',
+      age: Math.floor( Math.random() * 50 ) + 10
+    }).subscribe( next => console.log ( next ));
   }
 
   setSelectedUsr ( selectedUsr: User ) {

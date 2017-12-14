@@ -37,6 +37,9 @@ export class UserComponent implements OnInit, OnChanges {
   @Output ()
   selected: EventEmitter<User> = new EventEmitter ();
 
+  @Output ()
+  delete: EventEmitter<User> = new EventEmitter ();
+
   @HostBinding ( 'class.selected' )
   isSelected = false;
 
@@ -51,6 +54,11 @@ export class UserComponent implements OnInit, OnChanges {
   ] )
   clickMe ( evt: MouseEvent ) {
     this.selected.next ( this.user );
+  }
+
+  deleteUsr ( evt: MouseEvent ) {
+    this.delete.next ( this.user );
+    this.selected.next ( null );
   }
 
   ngOnChanges ( changes: SimpleChanges ): void {
